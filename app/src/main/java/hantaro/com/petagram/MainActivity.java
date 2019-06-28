@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TopRating.class);
                 Pet [] pets = new Pet[petList.size()];
                 int i = 0;
-                //Create a from the list
+                //Create array from the list
                 for(Pet pet : petList){
                     pets[i] = pet;
                     i++;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                        }
                    }
                 }
-                //Create a new array with 5 most rated
+                //Create a new array with the 5 most rated
                 Pet [] petsRated = new Pet[5];
                 for(int x = 0; x < 5; x++){
                     petsRated[x] = pets[x];
