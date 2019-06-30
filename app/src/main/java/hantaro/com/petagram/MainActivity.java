@@ -1,6 +1,7 @@
 package hantaro.com.petagram;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -62,32 +63,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        petList = new ArrayList<>();
-
-        petList.add(new Pet("Akita", R.drawable.akita));
-        petList.add(new Pet("Bulldog", R.drawable.bulldog));
-        petList.add(new Pet("Eskimo", R.drawable.eskimo));
-        petList.add(new Pet("Pitbull", R.drawable.pitbull));
-        petList.add(new Pet("Shepherd", R.drawable.shepherd));
-
-        petList.add(new Pet("Collie", R.drawable.collie));
-        petList.add(new Pet("Beagle", R.drawable.beagle));
-        petList.add(new Pet("Bolognese", R.drawable.bolognese));
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        PetPagerAdapter petPagerAdapter = new PetPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(petPagerAdapter);
 
 
-
-        PetAdapter petAdapter = new PetAdapter(petList, this);
-
-        RecyclerView recyclerView = findViewById(R.id.rv_pets);
-        //To perform
-        petAdapter.setHasStableIds(true);
-        recyclerView.setHasFixedSize(true);
-
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(petAdapter);
     }
 
     @Override
