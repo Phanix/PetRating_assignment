@@ -64,13 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
         petList = new ArrayList<>();
 
-        petList.add(new Pet("Hippopotamus", R.drawable.hippo));
-        petList.add(new Pet("Dog", R.drawable.dog));
-        petList.add(new Pet("Lion", R.drawable.lion));
-        petList.add(new Pet("Monkey", R.drawable.monkey));
-        petList.add(new Pet("Rabbit", R.drawable.rabbit));
-        petList.add(new Pet("Tiger", R.drawable.tiger));
-        petList.add(new Pet("Cat", R.drawable.cat));
+        petList.add(new Pet("Akita", R.drawable.akita));
+        petList.add(new Pet("Bulldog", R.drawable.bulldog));
+        petList.add(new Pet("Eskimo", R.drawable.eskimo));
+        petList.add(new Pet("Pitbull", R.drawable.pitbull));
+        petList.add(new Pet("Shepherd", R.drawable.shepherd));
+
+        petList.add(new Pet("Collie", R.drawable.collie));
+        petList.add(new Pet("Beagle", R.drawable.beagle));
+        petList.add(new Pet("Bolognese", R.drawable.bolognese));
+
 
 
         PetAdapter petAdapter = new PetAdapter(petList, this);

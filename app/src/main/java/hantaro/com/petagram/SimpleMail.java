@@ -1,5 +1,7 @@
 package hantaro.com.petagram;
 
+import android.util.Log;
+
 import java.util.Properties;
 
 
@@ -19,17 +21,18 @@ public class SimpleMail  {
 
     /**CHANGE ACCORDINGLY**/
     private static final String SMTP_HOST_NAME = "smtp.gmail.com"; //can be your host server smtp@yourdomain.com
-    private static final String SMTP_AUTH_USER = "fh2game86@gmail.com"; //your login username/email
-    private static final String SMTP_AUTH_PWD  = "mskin1512861"; //password/secret
+    private static final String SMTP_AUTH_USER = "email@gmail.com"; //your login username/email
+    private static final String SMTP_AUTH_PWD  = "pass"; //password/secret
 
     private static Message message;
 
 
-    public static void sendEmail(String to, String subject, String msg){
+    public static void sendEmail(String msg){
         // Recipient's email ID needs to be mentioned.
 
         // Sender's email ID needs to be mentioned
-        String from = "fh2game86@gmail.com"; //from
+        String from = SMTP_AUTH_USER; //from
+        String subject = "Contact";
 
         final String username = SMTP_AUTH_USER;
         final String password = SMTP_AUTH_PWD;
@@ -60,7 +63,7 @@ public class SimpleMail  {
 
             // Set To: header field of the header.
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(to));
+                    InternetAddress.parse(SMTP_AUTH_USER));
 
             // Set Subject: header field
             message.setSubject(subject);
@@ -77,14 +80,6 @@ public class SimpleMail  {
             // Set text message part
             multipart.addBodyPart(messageBodyPart);
 
-//            // Part two is attachment
-//            messageBodyPart = new MimeBodyPart();
-//            String filename = Context.;
-//            DataSource source = new FileDataSource(filename);
-//            messageBodyPart.setDataHandler(new DataHandler(source));
-//            messageBodyPart.setFileName(filename);
-//            multipart.addBodyPart(messageBodyPart);
-
             // Send the complete message parts
             message.setContent(multipart);
 
@@ -96,7 +91,7 @@ public class SimpleMail  {
 
                         // Send message
                         Transport.send(message);
-                        System.out.println("Sent message successfully....");
+                        Log.i("Sending", "Sent message successfully....");
                     } catch (Exception e) {
                         e.printStackTrace();
 

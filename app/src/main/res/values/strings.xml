@@ -4,4 +4,9 @@
     <string name="rating_zero">0</string>
     <string name="contact">Contact</string>
     <string name="about">About</string>
+    <string name="enter_email">Email</string>
+    <string name="message_body">Message</string>
+    <string name="send">Send</string>
+    <string name="send_message">Send A Email</string>
+    <string name="success">Your mail has been sent successfuly ! Thank you for your feedback</string>
 </resources>
