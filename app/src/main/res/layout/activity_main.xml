@@ -15,12 +15,12 @@
 
         android:id="@+id/rv_pets"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
 
-        app:layout_constraintTop_toTopOf="@id/action_bar_custom" >
+        app:layout_constraintTop_toBottomOf="@id/action_bar_custom" >
 
 
     </android.support.v7.widget.RecyclerView>

@@ -8,6 +8,11 @@
     android:layout_margin="20dp"
     tools:context=".Contact">
 
+    <include android:id="@+id/action_bar_custom"
+        layout="@layout/actionbar"
+        >
+    </include>
+
     <TextView
         android:gravity="center"
         android:textSize="@dimen/text_send_email"

@@ -102,7 +102,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_contact:
                 Intent intent  = new Intent(MainActivity.this, Contact.class);
                 startActivity(intent);
-
+                break;
+            case R.id.action_about:
+                Intent intent1 = new Intent(MainActivity.this, About.class);
+                startActivity(intent1);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

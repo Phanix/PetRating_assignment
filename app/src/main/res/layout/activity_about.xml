@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".About">
 
+    <include android:id="@+id/action_bar_custom"
+        layout="@layout/actionbar"
+        >
+    </include>
+
 </android.support.constraint.ConstraintLayout>

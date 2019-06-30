@@ -12,8 +12,9 @@ public class About extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        Toolbar toolbar = findViewById(R.id.actionbar);
+        Toolbar toolbar = findViewById(R.id.action_bar_custom);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.findViewById(R.id.top_rated).setVisibility(View.INVISIBLE);
     }

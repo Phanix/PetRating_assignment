@@ -14,7 +14,7 @@ public class Contact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
-        Toolbar toolbar = findViewById(R.id.actionbar);
+        Toolbar toolbar = findViewById(R.id.action_bar_custom);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.findViewById(R.id.top_rated).setVisibility(View.INVISIBLE);
