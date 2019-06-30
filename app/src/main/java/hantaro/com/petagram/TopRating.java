@@ -21,17 +21,9 @@ public class TopRating extends AppCompatActivity {
         setContentView(R.layout.activity_top_rating);
 
         Toolbar toolbar = findViewById(R.id.actionbar);
-        toolbar.findViewById(R.id.top_rated).setVisibility(View.INVISIBLE);
-        toolbar.findViewById(R.id.back_arrow).setVisibility(View.VISIBLE);
-        ImageView imageView = findViewById(R.id.back_arrow);
-        imageView.setVisibility(View.VISIBLE);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.findViewById(R.id.top_rated).setVisibility(View.INVISIBLE);
 
 
 
