@@ -14,14 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PetListFragment extends Fragment {
-
+   public static final List<Pet> petList = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.pet_list_fragment, container, false);
-
-        List<Pet> petList = new ArrayList<>();
 
 
 

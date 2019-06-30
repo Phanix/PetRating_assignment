@@ -1,6 +1,7 @@
 package hantaro.com.petagram;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,11 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<Pet> petList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
 
         Toolbar toolbar = findViewById(R.id.action_bar_custom);
         setSupportActionBar(toolbar);
@@ -34,16 +37,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TopRating.class);
-                Pet [] pets = new Pet[petList.size()];
+
+                Pet [] pets = new Pet[PetListFragment.petList.size()];
                 int i = 0;
                 //Create array from the list
-                for(Pet pet : petList){
+                for(Pet pet : PetListFragment.petList){
                     pets[i] = pet;
                     i++;
                 }
                 //Sort the array
-                for(int x = 0; x < petList.size() - 1; x++){
-                   for(int y = x; y < petList.size(); y++){
+                for(int x = 0; x < PetListFragment.petList.size() - 1; x++){
+                   for(int y = x; y < PetListFragment.petList.size(); y++){
                        if(pets[x].getRating() < pets[y].getRating()){
                            Pet pet = pets[x];
                            pets[x] = pets[y];
@@ -65,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         PetPagerAdapter petPagerAdapter = new PetPagerAdapter(getSupportFragmentManager());
+        tabLayout.setupWithViewPager(viewPager);
         viewPager.setAdapter(petPagerAdapter);
+        tabLayout.getTabAt(0).setIcon(R.mipmap.ic_doghouse);
+        tabLayout.getTabAt(1).setIcon(R.mipmap.ic_dogface);
 
 
     }

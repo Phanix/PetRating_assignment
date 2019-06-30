@@ -5,10 +5,34 @@
     android:layout_height="match_parent"
     tools:context=".PerfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+    <!-- TODO: Update blank fragment layout -->
+<ImageView
+    android:src="@drawable/akita"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="center"
+        android:textSize="@dimen/text_send_email"
+        android:layout_width="match_parent"
+        android:text="@string/default_name"
+        android:layout_height="wrap_content" />
 
+        <View
+            android:background="@android:color/black"
+            android:layout_height="2dp"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            >
+
+        </View>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_friends"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
 </FrameLayout>
