@@ -24,7 +24,9 @@ public class Contact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView message = findViewById(R.id.et_message_body);
-                SimpleMail.sendEmail(message.toString());
+                TextView name    = findViewById(R.id.et_name);
+                TextView email   = findViewById(R.id.et_email);
+                SimpleMail.sendEmail(message.getText().toString(), email.getText().toString(), name.getText().toString());
                 Toast.makeText(Contact.this, getResources().getString(R.string.success), Toast.LENGTH_SHORT).show();
             }
         });

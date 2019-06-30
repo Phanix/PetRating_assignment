@@ -7,6 +7,7 @@
     <string name="enter_email">Email</string>
     <string name="message_body">Message</string>
     <string name="send">Send</string>
-    <string name="send_message">Send A Email</string>
+    <string name="send_message">Send Email</string>
     <string name="success">Your mail has been sent successfuly ! Thank you for your feedback</string>
+    <string name="email_name">Name</string>
 </resources>

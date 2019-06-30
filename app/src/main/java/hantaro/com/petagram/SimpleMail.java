@@ -27,12 +27,12 @@ public class SimpleMail  {
     private static Message message;
 
 
-    public static void sendEmail(String msg){
+    public static void sendEmail(String msg, String email, String name){
         // Recipient's email ID needs to be mentioned.
 
         // Sender's email ID needs to be mentioned
-        String from = SMTP_AUTH_USER; //from
-        String subject = "Contact";
+        String from = email; //from
+        String subject = name;
 
         final String username = SMTP_AUTH_USER;
         final String password = SMTP_AUTH_PWD;
