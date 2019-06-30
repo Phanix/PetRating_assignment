@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -90,5 +91,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_contact:
+                Intent intent  = new Intent(MainActivity.this, Contact.class);
+                startActivity(intent);
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
