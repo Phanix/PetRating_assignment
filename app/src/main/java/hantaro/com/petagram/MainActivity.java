@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
         Toolbar toolbar = findViewById(R.id.action_bar_custom);
+
         setSupportActionBar(toolbar);
 
         ImageView imageView = findViewById(R.id.top_rated);

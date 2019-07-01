@@ -30,32 +30,19 @@ public class PerfilFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-        List<Pet> petList = PetListFragment.petList;
-
-        petList.add(new Pet("Akita", R.drawable.akita));
-        petList.add(new Pet("Bulldog", R.drawable.bulldog));
-        petList.add(new Pet("Eskimo", R.drawable.eskimo));
-        petList.add(new Pet("Pitbull", R.drawable.pitbull));
-        petList.add(new Pet("Shepherd", R.drawable.shepherd));
-
-        petList.add(new Pet("Collie", R.drawable.collie));
-        petList.add(new Pet("Beagle", R.drawable.beagle));
-        petList.add(new Pet("Bolognese", R.drawable.bolognese));
 
 
 
-        PetAdapter petAdapter = new PetAdapter(petList, getActivity());
+        PerfilAdapter petAdapter = new PerfilAdapter();
 
         RecyclerView recyclerView = view.findViewById(R.id.rv_friends);
         //To perform
-        petAdapter.setHasStableIds(true);
-        recyclerView.setHasFixedSize(true);
-
-
-        GridLayoutManager linearLayoutManager = new GridLayoutManager(getActivity(), 3);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+        gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(petAdapter);
+
+
 
         return view;
     }
