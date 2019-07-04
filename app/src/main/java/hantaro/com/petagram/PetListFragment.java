@@ -13,8 +13,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import hantaro.com.petagram.model.Pet;
+import hantaro.com.petagram.model.PetConstructor;
+
 public class PetListFragment extends Fragment {
-   public static final List<Pet> petList = new ArrayList<>();
+   public static  List<Pet> petList = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,16 +25,8 @@ public class PetListFragment extends Fragment {
         View view = inflater.inflate(R.layout.pet_list_fragment, container, false);
 
 
-
-        petList.add(new Pet("Akita", R.drawable.akita));
-        petList.add(new Pet("Bulldog", R.drawable.bulldog));
-        petList.add(new Pet("Eskimo", R.drawable.eskimo));
-        petList.add(new Pet("Pitbull", R.drawable.pitbull));
-        petList.add(new Pet("Shepherd", R.drawable.shepherd));
-
-        petList.add(new Pet("Collie", R.drawable.collie));
-        petList.add(new Pet("Beagle", R.drawable.beagle));
-        petList.add(new Pet("Bolognese", R.drawable.bolognese));
+        PetConstructor petConstructor = new PetConstructor(getContext());
+        petList = petConstructor.getAllPets();
 
 
 

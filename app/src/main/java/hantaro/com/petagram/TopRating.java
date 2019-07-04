@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
+import hantaro.com.petagram.model.Pet;
 
 public class TopRating extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class TopRating extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        Pet [] pets = (Pet[]) bundle.getSerializable("petArray");
+        Pet[] pets = (Pet[]) bundle.getSerializable("petArray");
         List<Pet> petList = Arrays.asList(pets);
 
         RecyclerView recyclerView = findViewById(R.id.rv_pets);

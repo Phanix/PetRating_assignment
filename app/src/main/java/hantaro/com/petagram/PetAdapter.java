@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import hantaro.com.petagram.model.Pet;
+
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetAdapterViewHolder>{
 
