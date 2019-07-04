@@ -61,7 +61,8 @@ public class DataBase extends SQLiteOpenHelper {
                     " FROM " + ConstantsDataBase.TABLE_PET_LIKES +
                     " WHERE " + ConstantsDataBase.TABLE_LIKES_PET_ID_PET + "=" + pet.getId();
             Cursor cursorLikes = db.rawQuery(query_likes, null);
-            if(cursor.moveToNext()){
+
+            if(cursorLikes.moveToNext()){
                 pet.setRating(cursorLikes.getInt(0));
             }else{
                 pet.setRating(0);
@@ -100,5 +101,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         return likes;
     }
+
+
 
 }

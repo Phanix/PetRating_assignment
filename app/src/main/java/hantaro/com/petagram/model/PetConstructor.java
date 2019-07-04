@@ -12,32 +12,35 @@ import hantaro.com.petagram.db.DataBase;
 
 public class PetConstructor {
 
+    private static final int LIKE = 1;
     private Context mContext;
 
     public PetConstructor(Context context){
         this.mContext = context;
     }
 
-    /*
-     petList.add(new Pet("Akita", R.drawable.akita));
-        petList.add(new Pet("Bulldog", R.drawable.bulldog));
-        petList.add(new Pet("Eskimo", R.drawable.eskimo));
-        petList.add(new Pet("Pitbull", R.drawable.pitbull));
-        petList.add(new Pet("Shepherd", R.drawable.shepherd));
-        petList.add(new Pet("Collie", R.drawable.collie));
-        petList.add(new Pet("Beagle", R.drawable.beagle));
-        petList.add(new Pet("Bolognese", R.drawable.bolognese));
-
-
-     */
-
     public List<Pet> getAllPets(){
         DataBase db = new DataBase(mContext);
         if(db.getAllPets() == null || db.getAllPets().size() == 0){
             insertData(db);
-            return db.getAllPets();
         }
+        db.close();
         return db.getAllPets();
+    }
+
+    public void insertLike(Pet pet){
+        DataBase dataBase = new DataBase(mContext);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantsDataBase.TABLE_LIKES_PET_ID_PET, pet.getId());
+        contentValues.put(ConstantsDataBase.TABLE_PET_NUMBER_OF_LIKES, LIKE);
+        dataBase.insertLike(contentValues);
+
+    }
+
+    public int getLike(Pet pet){
+        DataBase dataBase = new DataBase(mContext);
+        return dataBase.getPetLikes(pet);
+
     }
 
     public void insertData(DataBase db){
@@ -79,7 +82,7 @@ public class PetConstructor {
         contentValues.put(ConstantsDataBase.TABLE_PET_IMAGE, R.drawable.bolognese);
         db.insertPet(contentValues);
 
-
+        db.close();
 
     }
 

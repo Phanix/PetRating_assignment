@@ -1,6 +1,7 @@
 package hantaro.com.petagram;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +14,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import hantaro.com.petagram.db.ConstantsDataBase;
+import hantaro.com.petagram.db.DataBase;
 import hantaro.com.petagram.model.Pet;
+import hantaro.com.petagram.model.PetConstructor;
 
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetAdapterViewHolder>{
@@ -39,15 +43,20 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetAdapterViewHo
     @Override
     public void onBindViewHolder(@NonNull final PetAdapterViewHolder pet, final int i) {
         pet.petImage.setImageResource(mPets.get(i).getImage());
+
         pet.boneImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mPets.get(i).setRating(mPets.get(i).getRating() + 1);
                 pet.petRating.setText(mPets.get(i).getRating() + "");
+                PetConstructor petConstructor = new PetConstructor(mActivity);
+                petConstructor.insertLike(mPets.get(i));
             }
         });
+        PetConstructor petConstructor  = new PetConstructor(mActivity);
+        int likes = petConstructor.getLike(mPets.get(i));
         pet.petName.setText(mPets.get(i).getName());
-        pet.petRating.setText(mPets.get(i).getRating() + "");
+        pet.petRating.setText(likes + "");
 
     }
 
