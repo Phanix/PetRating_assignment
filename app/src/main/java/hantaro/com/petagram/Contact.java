@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import hantaro.com.petagram.mail.SimpleMail;
+
 public class Contact extends AppCompatActivity {
 
     @Override

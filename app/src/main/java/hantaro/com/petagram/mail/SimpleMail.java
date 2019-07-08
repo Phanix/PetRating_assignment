@@ -1,4 +1,4 @@
-package hantaro.com.petagram;
+package hantaro.com.petagram.mail;
 
 import android.util.Log;
 

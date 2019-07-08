@@ -1,4 +1,4 @@
-package hantaro.com.petagram;
+package hantaro.com.petagram.vista.fragment;
 
 
 import android.os.Bundle;
@@ -10,7 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
+import hantaro.com.petagram.adapter.PerfilAdapter;
+import hantaro.com.petagram.R;
 
 
 /**

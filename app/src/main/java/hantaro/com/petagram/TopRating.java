@@ -10,6 +10,7 @@ import android.view.View;
 import java.util.Arrays;
 import java.util.List;
 
+import hantaro.com.petagram.adapter.PetAdapter;
 import hantaro.com.petagram.model.Pet;
 
 public class TopRating extends AppCompatActivity {

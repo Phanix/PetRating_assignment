@@ -1,7 +1,6 @@
-package hantaro.com.petagram;
+package hantaro.com.petagram.adapter;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +13,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import hantaro.com.petagram.db.ConstantsDataBase;
-import hantaro.com.petagram.db.DataBase;
+import hantaro.com.petagram.R;
 import hantaro.com.petagram.model.Pet;
 import hantaro.com.petagram.model.PetConstructor;
 

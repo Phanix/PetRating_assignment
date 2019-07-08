@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 
+import hantaro.com.petagram.adapter.PetPagerAdapter;
 import hantaro.com.petagram.model.Pet;
+import hantaro.com.petagram.vista.fragment.PetListFragment;
 
 public class MainActivity extends AppCompatActivity {
 
