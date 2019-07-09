@@ -8,5 +8,8 @@
         android:title="@string/about"
         android:id="@+id/action_about"
         ></item>
+    <item
+        android:title="@string/set_up_account"
+        android:id="@+id/action_set_up_account"></item>
 
 </menu>

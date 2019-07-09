@@ -34,8 +34,6 @@ public class PetListFragment extends Fragment implements IPetListFragment{
 
 
         PetListFragmentPresenter petListFragmentPresenter = new PetListFragmentPresenter(this, getContext());
-        //To perform
-
 
         return view;
     }
