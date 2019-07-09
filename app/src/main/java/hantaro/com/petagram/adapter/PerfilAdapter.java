@@ -1,17 +1,32 @@
 package hantaro.com.petagram.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import hantaro.com.petagram.R;
+import hantaro.com.petagram.model.PetUser;
 
 public class PerfilAdapter extends RecyclerView.Adapter<PerfilAdapter.PerfilAdapterViewHolder>{
 
-    private static final String [] NUMBER_OF_BONES = {"1", "2", "3", "6", "0", "5", "10", "7", "9", "10"};
+    List<PetUser> mPetUserList;
+    Context mContext;
+
+    public PerfilAdapter(List<PetUser> petUserList, Context context) {
+        mPetUserList = petUserList;
+        mContext = context;
+    }
+
 
     @NonNull
     @Override
@@ -24,21 +39,30 @@ public class PerfilAdapter extends RecyclerView.Adapter<PerfilAdapter.PerfilAdap
 
     @Override
     public void onBindViewHolder(@NonNull PerfilAdapterViewHolder perfilAdapterViewHolder, int i) {
-        perfilAdapterViewHolder.mTextViewCounr.setText(NUMBER_OF_BONES[i]);
+        perfilAdapterViewHolder.mTvLikes.setText(mPetUserList.get(i).getLikes() + "");
+        ImageView imageView = perfilAdapterViewHolder.mImage;
+        Picasso.with(mContext).load(mPetUserList.get(i).getImageUrl()).into(imageView);
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        if(mPetUserList == null){
+            Toast.makeText(mContext, "PetUserEmpty", Toast.LENGTH_LONG).show();
+            return 0;
+        }else{
+            return mPetUserList.size();
+        }
     }
 
     public class PerfilAdapterViewHolder extends RecyclerView.ViewHolder{
 
-        TextView mTextViewCounr;
+        TextView mTvLikes;
+        ImageView mImage;
 
         public PerfilAdapterViewHolder(@NonNull View itemView) {
             super(itemView);
-            mTextViewCounr = itemView.findViewById(R.id.tv_count);
+            mTvLikes = itemView.findViewById(R.id.tv_count);
+            mImage = itemView.findViewById(R.id.img_perfil);
         }
     }
 }

@@ -5,7 +5,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+
+import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -29,16 +32,38 @@ public class ContactDeserializador implements JsonDeserializer<ContactResponse> 
         return contactResponse;
     }
 
+
+
     private List<PetUser> deserializadorContactDeJon(JsonArray contactResponseData){
 
         List<PetUser> pets = new ArrayList<>();
 
         for(int i = 0; i < contactResponseData.size(); i++){
+            JsonObject contactResponseDataObject = contactResponseData.get(i).getAsJsonObject();
 
+            JsonObject userJson  = contactResponseDataObject.getAsJsonObject(JsonKeys.USER);
+            String id = userJson.get(JsonKeys.USER_ID).getAsString();
+            String name = userJson.get(JsonKeys.USER_FULLNAME).getAsString();
+
+            JsonObject imagJson = contactResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_IMAGES);
+            JsonObject stdResolution = imagJson.getAsJsonObject(JsonKeys.MEDIA_STANDARD_RESOLUTION);
+            String urlImage = stdResolution.get(JsonKeys.MEDIA_URL).getAsString();
+
+
+            JsonObject likesJson = contactResponseDataObject.getAsJsonObject(JsonKeys.MEDIA_LIKES);
+            int likes = likesJson.get(JsonKeys.MEDIA_LIKES_COUNT).getAsInt();
+
+            PetUser petUser = new PetUser();
+            petUser.setId(id);
+            petUser.setLikes(likes);
+            petUser.setName(name);
+            petUser.setImageUrl(urlImage);
+
+            pets.add(petUser);
 
 
         }
 
-        return null;
+        return pets;
     }
 }

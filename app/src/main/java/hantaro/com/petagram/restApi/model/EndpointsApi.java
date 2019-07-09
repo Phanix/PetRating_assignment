@@ -10,4 +10,7 @@ public interface EndpointsApi {
     @GET(ConstantesRestApi.URL_GET_RECENT_MEDIA_USER)
     Call<ContactResponse> getRecentMedia();
 
+    @GET(ConstantesRestApi.URL_GET_USER_PERFIL)
+    Call<PerfilResponse> getUserPerfil();
+
 }

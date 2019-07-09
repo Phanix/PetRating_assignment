@@ -2,7 +2,7 @@ package hantaro.com.petagram.model;
 
 public class PetUser {
 
-    private int id;
+    private String id;
     private int likes;
     private String name;
     private String imageUrl;
@@ -11,18 +11,18 @@ public class PetUser {
 
     }
 
-    public PetUser(int id, int likes, String name, String imageUrl) {
+    public PetUser(String id, int likes, String name, String imageUrl) {
         this.id = id;
         this.likes = likes;
         this.name = name;
         this.imageUrl = imageUrl;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

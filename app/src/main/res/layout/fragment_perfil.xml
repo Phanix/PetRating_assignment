@@ -13,7 +13,7 @@
     <!-- TODO: Update blank fragment layout -->
 
         <com.mikhaellopez.circularimageview.CircularImageView
-
+            android:id="@+id/perfil_image"
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -32,6 +32,7 @@
             />
 
     <TextView
+        android:id="@+id/perfil_name"
         android:gravity="center"
         android:textSize="@dimen/text_send_email"
         android:layout_width="match_parent"
